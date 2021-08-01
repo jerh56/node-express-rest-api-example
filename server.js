@@ -1,3 +1,19 @@
+// Add this to the VERY top of the first file loaded in your app
+var apm = require('elastic-apm-node').start({
+
+  // Override the service name from package.json
+  // Allowed characters: a-z, A-Z, 0-9, -, _, and space
+  serviceName: '',
+
+  // Use if APM Server requires a secret token
+  secretToken: '7e9G0W1jzxupEpXtLC',
+
+  // Set the custom APM Server URL (default: http://localhost:8200)
+  serverUrl: 'https://86a4fe88320147d592a24925ce43b2ac.apm.us-west1.gcp.cloud.es.io:443',
+
+  // Set the service environment
+  environment: 'production'
+})
 var express = require("express")
 var app = express()
 var db = require("./database.js")
